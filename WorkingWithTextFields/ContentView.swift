@@ -9,8 +9,19 @@
 import SwiftUI
 
 struct ContentView: View {
+    @State private var email: String = ""
+    
     var body: some View {
-        Text("Hello, World!")
+        VStack(alignment: .leading) {
+            Text("Hello, World!")
+                .bold()
+                .font(.system(size: 30))
+            
+            TextField("Enter your email here...", text: $email)
+                .textFieldStyle(RoundedBorderTextFieldStyle())
+                .foregroundColor(Color.red)
+            
+        }.padding()
     }
 }
 
