@@ -10,18 +10,32 @@ import SwiftUI
 
 struct ContentView: View {
     @State private var email: String = ""
+    @State private var password: String = ""
     
     var body: some View {
-        VStack(alignment: .leading) {
-            Text("Hello, World!")
-                .bold()
-                .font(.system(size: 30))
+        VStack {
+            VStack(alignment: .leading) {
+                Text("Sign in")
+                    .bold()
+                    .font(.system(size: 30))
+                
+                TextField("Enter your email here...", text: $email)
+                    .textFieldStyle(RoundedBorderTextFieldStyle())
+                    .foregroundColor(Color.red)
+                
+            }.padding()
             
-            TextField("Enter your email here...", text: $email)
-                .textFieldStyle(RoundedBorderTextFieldStyle())
-                .foregroundColor(Color.red)
-            
-        }.padding()
+            VStack(alignment: .leading) {
+                Text("Password")
+                    .bold()
+                    .font(.system(size: 30))
+                
+                TextField("Enter your password here...", text: $password)
+                    .textFieldStyle(RoundedBorderTextFieldStyle())
+                    .foregroundColor(Color.red)
+                
+            }.padding()
+        }
     }
 }
 
